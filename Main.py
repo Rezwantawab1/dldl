@@ -41,6 +41,7 @@ def download_youtube(message):
 def video(message , url):
     try:
         ydl_opts = {
+            'outtmpl' : '%(title)s.%(ext)s',
             'cookies' : 'cookies.txt' 
             }
 
@@ -57,6 +58,7 @@ def video(message , url):
 def link(message , url):
     try:
         ydl_opts = {
+            'outtmpl' : '%(title)s.%(ext)s',
             'cookies' : 'cookies.txt'
         }
         with yt_dlp.YoutubeDL(ydl_opts) as dlp:
